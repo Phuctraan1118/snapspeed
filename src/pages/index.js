@@ -53,6 +53,8 @@ export default function Home() {
       const response = await fetch('http://103.45.234.81:5000/api/download', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        mode: 'cors',
+        credentials: 'omit',
         body: JSON.stringify({ urls: urls.split('\n').filter((u) => u.trim()) }),
       });
 
